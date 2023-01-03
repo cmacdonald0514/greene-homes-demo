@@ -1,0 +1,10 @@
+Metrics to create
+
+- Freshness and volume metrics on entire source
+    - Freshness
+    - Row Count
+    - Grouped into a 'Freshness and Volume' SLA
+- Specific Use Case metrics 
+    - State code not greater than 2 characters
+    - Contract price grouped by state
+    - Grouped into 'Dashboard A' SLA

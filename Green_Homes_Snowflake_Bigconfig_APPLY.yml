@@ -1,0 +1,685 @@
+process_stage: APPLY
+source_name: Green_Homes_Snowflake_Bigconfig
+row_creation_time_upserted_count: 5
+created_metric_count: 1
+updated_metric_count: 18
+deleted_metric_count: 0
+unchanged_metric_count: 0
+row_creation_time_upsert_failure_count: 0
+metric_application_error_count: 0
+invalid_asset_identifier_count: 0
+total_error_count: 0
+row_creation_time_report:
+  columns_set_as_row_creation_time:
+  - id: 72275443
+    display_name: GREENE_HOMES_DEMO_STANDARD.STAGE.PAYMENTS.PAYMENT_DATETIME
+  - id: 72275438
+    display_name: GREENE_HOMES_DEMO_STANDARD.STAGE.CONTRACT.UPDATE_DATETIME
+  - id: 72275421
+    display_name: GREENE_HOMES_DEMO_STANDARD.STAGE.CONTRACT_STATUS.STATUS_DATETIME
+  - id: 72275417
+    display_name: GREENE_HOMES_DEMO_STANDARD.CONFORMED.CONTRACT_PERFORMANCE_DASHBOARD.LOAD_DATETIME
+  - id: 72275452
+    display_name: GREENE_HOMES_DEMO_STANDARD.STAGE.CUSTOMER.UPDATE_DATETIME
+metric_application_errors: []
+invalid_asset_identifier_errors: []
+created_metrics:
+- metric_configuration:
+    id: 117525120
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_WIDE
+        forecast_value: -1.0
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_WIDE
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538539
+    metric_type:
+      predefined_metric:
+        metric_name: VARIANCE
+    parameters:
+    - key: arg1
+      column_name: CONTRACT_PRICE
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+    name: WIDE AUTO THRESHOLD
+  collection_ids:
+  - 1230
+updated_metrics:
+- metric_configuration:
+    id: 117525102
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 6
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538537
+    metric_type:
+      predefined_metric:
+        metric_name: HOURS_SINCE_LAST_LOAD
+    parameters:
+    - key: arg1
+      column_name: STATUS_ID
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+    is_table_metric: true
+  collection_ids:
+  - 1228
+- metric_configuration:
+    id: 117525103
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 6
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538539
+    metric_type:
+      predefined_metric:
+        metric_name: HOURS_SINCE_LAST_LOAD
+    parameters:
+    - key: arg1
+      column_name: CONTRACT_ID
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+    is_table_metric: true
+  collection_ids:
+  - 1228
+- metric_configuration:
+    id: 117525104
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 6
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538540
+    metric_type:
+      predefined_metric:
+        metric_name: HOURS_SINCE_LAST_LOAD
+    parameters:
+    - key: arg1
+      column_name: PAYMENT_ID
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+    is_table_metric: true
+  collection_ids:
+  - 1228
+- metric_configuration:
+    id: 117525105
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 6
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538541
+    metric_type:
+      predefined_metric:
+        metric_name: HOURS_SINCE_LAST_LOAD
+    parameters:
+    - key: arg1
+      column_name: CUSTOMER_ID
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+    is_table_metric: true
+  collection_ids:
+  - 1228
+- metric_configuration:
+    id: 117525106
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538537
+    metric_type:
+      predefined_metric:
+        metric_name: ROWS_INSERTED
+    parameters:
+    - key: arg1
+      column_name: STATUS_ID
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+    is_table_metric: true
+  collection_ids:
+  - 1228
+- metric_configuration:
+    id: 117525107
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538539
+    metric_type:
+      predefined_metric:
+        metric_name: ROWS_INSERTED
+    parameters:
+    - key: arg1
+      column_name: CONTRACT_ID
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+    is_table_metric: true
+  collection_ids:
+  - 1228
+- metric_configuration:
+    id: 117525108
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538540
+    metric_type:
+      predefined_metric:
+        metric_name: ROWS_INSERTED
+    parameters:
+    - key: arg1
+      column_name: PAYMENT_ID
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+    is_table_metric: true
+  collection_ids:
+  - 1228
+- metric_configuration:
+    id: 117525109
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538541
+    metric_type:
+      predefined_metric:
+        metric_name: ROWS_INSERTED
+    parameters:
+    - key: arg1
+      column_name: CUSTOMER_ID
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+    is_table_metric: true
+  collection_ids:
+  - 1228
+- metric_configuration:
+    id: 117525110
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538539
+    metric_type:
+      predefined_metric:
+        metric_name: MIN
+    parameters:
+    - key: arg1
+      column_name: CONTRACT_PRICE
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+  collection_ids:
+  - 1229
+- metric_configuration:
+    id: 117525111
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538539
+    metric_type:
+      predefined_metric:
+        metric_name: MAX
+    parameters:
+    - key: arg1
+      column_name: CONTRACT_PRICE
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+  collection_ids:
+  - 1229
+- metric_configuration:
+    id: 117525112
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538539
+    metric_type:
+      predefined_metric:
+        metric_name: MEDIAN
+    parameters:
+    - key: arg1
+      column_name: CONTRACT_PRICE
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+  collection_ids:
+  - 1229
+- metric_configuration:
+    id: 117525113
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538539
+    metric_type:
+      predefined_metric:
+        metric_name: AVERAGE
+    parameters:
+    - key: arg1
+      column_name: CONTRACT_PRICE
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+  collection_ids:
+  - 1229
+- metric_configuration:
+    id: 117525114
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538540
+    metric_type:
+      predefined_metric:
+        metric_name: MIN
+    parameters:
+    - key: arg1
+      column_name: PAYMENT_AMOUNT
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+  collection_ids:
+  - 1229
+- metric_configuration:
+    id: 117525115
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538540
+    metric_type:
+      predefined_metric:
+        metric_name: MAX
+    parameters:
+    - key: arg1
+      column_name: PAYMENT_AMOUNT
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+  collection_ids:
+  - 1229
+- metric_configuration:
+    id: 117525116
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538540
+    metric_type:
+      predefined_metric:
+        metric_name: MEDIAN
+    parameters:
+    - key: arg1
+      column_name: PAYMENT_AMOUNT
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+  collection_ids:
+  - 1229
+- metric_configuration:
+    id: 117525117
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    thresholds:
+    - auto_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    - auto_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: -1.0
+        model_type: BOOTSTRAP_THRESHOLD_MODEL_TYPE
+        sensitivity: AUTOTHRESHOLD_SENSITIVITY_MEDIUM
+        forecast_value: -1.0
+    warehouse_id: 990
+    dataset_id: 3538540
+    metric_type:
+      predefined_metric:
+        metric_name: AVERAGE
+    parameters:
+    - key: arg1
+      column_name: PAYMENT_AMOUNT
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+  collection_ids:
+  - 1229
+- metric_configuration:
+    id: 117525118
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    thresholds:
+    - constant_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+    - constant_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: 2.0
+    warehouse_id: 990
+    dataset_id: 3538541
+    metric_type:
+      predefined_metric:
+        metric_name: STRING_LENGTH_MAX
+    parameters:
+    - key: arg1
+      column_name: BILLING_STATE
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+  collection_ids:
+  - 1230
+- metric_configuration:
+    id: 117525119
+    schedule_frequency:
+      interval_type: HOURS_TIME_INTERVAL_TYPE
+      interval_value: 24
+    group_bys:
+    - BUILD_STATE
+    thresholds:
+    - constant_threshold:
+        bound:
+          bound_type: LOWER_BOUND_SIMPLE_BOUND_TYPE
+          value: 151000.0
+    - constant_threshold:
+        bound:
+          bound_type: UPPER_BOUND_SIMPLE_BOUND_TYPE
+          value: 1000000.0
+    warehouse_id: 990
+    dataset_id: 3538539
+    metric_type:
+      predefined_metric:
+        metric_name: MIN
+    parameters:
+    - key: arg1
+      column_name: CONTRACT_PRICE
+    lookback:
+      interval_type: DAYS_TIME_INTERVAL_TYPE
+      interval_value: 2
+    lookback_type: DATA_TIME_LOOKBACK_TYPE
+    metric_creation_state: METRIC_CREATION_STATE_SUITE
+    grain_seconds: 86400
+    name: Min Contract Price Per State
+    description: The minimum contract price per state should never be below 150k.
+  collection_ids:
+  - 1230
+deleted_metrics: []
+unchanged_metrics: []

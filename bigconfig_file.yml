@@ -1,0 +1,71 @@
+type: BIGCONFIG_FILE
+
+tag_definitions: 
+  - tag_id: ROW_CREATION_COLUMNS
+    column_selectors:
+      - name: Greene_Homes_Bigconfig.GREENE_HOMES_DEMO_STANDARD.STAGE.*.*_DATETIME
+  - tag_id: ALL_TABLES
+    column_selectors:
+      - name: Greene_Homes_Bigconfig.GREENE_HOMES_DEMO_STANDARD.STAGE.*.*
+
+row_creation_times:
+  tag_ids:
+    - ROW_CREATION_COLUMNS
+
+tag_deployments:
+  - sla:
+      name: Freshness and Volume - Bigconfig
+      description: Freshness and volume metrics across entire staging schema
+      notification_channels:
+        - slack: '#data_alerts'
+    deployments:
+        - tag_id: ALL_TABLES
+          metrics:
+            - metric_type: 
+                predefined_metric: HOURS_SINCE_LAST_LOAD
+            - metric_type: 
+                predefined_metric: ROWS_INSERTED
+        - tag_id: ROW_CREATION_COLUMNS
+          metrics: 
+            - metric_type: 
+                predefined_metric: HOURS_SINCE_MAX_TIMESTAMP
+
+saved_metric_definitions:
+  metrics:
+    - saved_metric_id: state_code_less_than_2
+      metric_type: 
+        predefined_metric: STRING_LENGTH_MAX
+      threshold:
+        type: CONSTANT
+        upper_bound: 2
+    - saved_metric_id: group_contract_price_by_state
+      metric_type: 
+        predefined_metric: MIN
+      metric_name: Min Contract Price Per State 
+      description: The minimum contract price per state should never be below 150k.
+      threshold:
+        type: CONSTANT
+        upper_bound: 1000000
+        lower_bound: 151000
+      group_by:
+        - BUILD_STATE
+      conditions:
+        - BUILD_STATE IS NOT NULL
+
+table_deployments:
+  - sla:
+      name: Dashboard A - Bigconfig
+      description: Data monitoring for dashboard A in business team
+      notification_channels:
+        - slack: '#data_alerts_dashboard_A'
+    deployments:
+      - fq_table_name: Greene_Homes_Bigconfig.GREENE_HOMES_DEMO_STANDARD.STAGE.CUSTOMER
+        columns:  
+          - column_name: BILLING_STATE
+            metrics:  
+              - saved_metric_id: state_code_less_than_2
+      - fq_table_name: Greene_Homes_Bigconfig.GREENE_HOMES_DEMO_STANDARD.STAGE.CONTRACT
+        columns:  
+          - column_name: CONTRACT_PRICE
+            metrics:  
+              - saved_metric_id: group_contract_price_by_state

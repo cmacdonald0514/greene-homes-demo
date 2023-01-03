@@ -1,0 +1,106 @@
+type: BIGCONFIG_FILE
+
+tag_definitions: 
+  - tag_id: ROW_CREATION_COLUMNS
+    column_selectors:
+>>>>
+Invalid source: 'name='Green_Homes_Snowflake_Bigconfig.*.*.*_DATETIME'' does not exist in workspace.
+<<<<
+      - name: Green_Homes_Snowflake_Bigconfig.*.*.*_DATETIME
+  - tag_id: ALL_TABLES
+    column_selectors:
+>>>>
+Invalid source: 'name='Green_Homes_Snowflake_Bigconfig.GREENE_HOMES_DEMO_STANDARD.STAGE.*.*'' does not exist in workspace.
+<<<<
+      - name: Green_Homes_Snowflake_Bigconfig.GREENE_HOMES_DEMO_STANDARD.STAGE.*.*
+  - tag_id: NUMERIC_DISTRIBUTION_COLUMNS
+    column_selectors:
+>>>>
+Invalid source: 'name='Green_Homes_Snowflake_Bigconfig.*.CONTRACT.CONTRACT_PRICE'' does not exist in workspace.
+<<<<
+      - name: Green_Homes_Snowflake_Bigconfig.*.CONTRACT.CONTRACT_PRICE
+>>>>
+Invalid source: 'name='Green_Homes_Snowflake_Bigconfig.*.PAYMENTS.PAYMENT_AMOUNT'' does not exist in workspace.
+<<<<
+      - name: Green_Homes_Snowflake_Bigconfig.*.PAYMENTS.PAYMENT_AMOUNT
+
+row_creation_times:
+  tag_ids:
+    - ROW_CREATION_COLUMNS
+
+tag_deployments:
+  - sla:
+      name: Metadata - Bigconfig
+    deployments:
+        - tag_id: ALL_TABLES
+          metrics:
+            - metric_type: 
+                predefined_metric: HOURS_SINCE_LAST_LOAD
+            - metric_type: 
+                predefined_metric: ROWS_INSERTED
+  - sla:
+      name: Numeric Distributions - Bigconfig
+      notification_channels:
+        - slack: '#data_alerts'
+    deployments:
+        - tag_id: NUMERIC_DISTRIBUTION_COLUMNS
+          metrics:
+            - metric_type: 
+                predefined_metric: MIN
+            - metric_type: 
+                predefined_metric: MAX
+            - metric_type: 
+                predefined_metric: MEDIAN
+            - metric_type: 
+                predefined_metric: AVERAGE
+
+saved_metric_definitions:
+  metrics:
+    - saved_metric_id: state_code_less_than_2
+      metric_type: 
+        predefined_metric: STRING_LENGTH_MAX
+      threshold:
+        type: CONSTANT
+        upper_bound: 2
+    - saved_metric_id: wide_auto_threshold
+      metric_type:
+        predefined_metric: MAX
+      metric_name: WIDE AUTO THRESHOLD
+      threshold:
+        type: AUTO 
+        sensitivity: WIDE
+    - saved_metric_id: group_contract_price_by_state
+      metric_type: 
+        predefined_metric: MIN
+      metric_name: Min Contract Price Per State 
+      description: The minimum contract price per state should never be below 150k.
+      threshold:
+        type: CONSTANT
+        upper_bound: 1000000
+        lower_bound: 151000
+      group_by:
+        - BUILD_STATE
+
+table_deployments:
+  - sla:
+      name: Business Rules - Bigconfig
+      notification_channels:
+        - slack: '#data_alerts'
+    deployments:
+>>>>
+Invalid source: 'Green_Homes_Snowflake_Bigconfig.GREENE_HOMES_DEMO_STANDARD.STAGE.CUSTOMER' does not exist in workspace.
+<<<<
+      - fq_table_name: Green_Homes_Snowflake_Bigconfig.GREENE_HOMES_DEMO_STANDARD.STAGE.CUSTOMER
+        columns:  
+          - column_name: BILLING_STATE
+            metrics:  
+              - saved_metric_id: state_code_less_than_2
+              - saved_metric_id: wide_auto_threshold
+>>>>
+Invalid source: 'Green_Homes_Snowflake_Bigconfig.GREENE_HOMES_DEMO_STANDARD.STAGE.CONTRACT' does not exist in workspace.
+<<<<
+      - fq_table_name: Green_Homes_Snowflake_Bigconfig.GREENE_HOMES_DEMO_STANDARD.STAGE.CONTRACT
+        columns:  
+          - column_name: CONTRACT_PRICE
+            metrics:  
+              - saved_metric_id: group_contract_price_by_state
